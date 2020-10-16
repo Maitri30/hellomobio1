@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+     table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            }   
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>No.</th>
+            <th>C.Name</th>
+        </tr>
+        {% for i in categories %}
+        <tr>
+            <td>{{ i.cid }}</td>
+            <td>{{ i.cname }}</td>
+            <td><a href="addproduct/" >AddProduct</a></td>
+            <td><a href="edit/{{ i.id }}" >Edit</a></td>
+            <td><a href="delete/{{ i.id }}" >Delete</a></td>
+        </tr>
+        {% endfor %}
+
+        {% for i in product %}
+        <tr>
+            <td>{{ i.pid }}</td>
+            <td>{{ i.pname }}</td>
+            <td>{{ i.prize }}</td>
+
+            <td><a href="edit/{{ i.id }}" >Edit</a></td>
+            <td><a href="delete/{{ i.id }}" >Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="/update/{{ categories.id }}">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td><input name="cid" required value="{{ categories.cid }}"></td>
+                <td><input name="cname" required value="{{ categories.cname }}"></td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">Update</button>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</body>
+</html>
